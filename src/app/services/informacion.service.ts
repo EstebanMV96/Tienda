@@ -4,15 +4,36 @@ import {Http} from '@angular/http';
 export class InformacionService {
 
   info: any = {};
-  cargada:boolean = false;
-  constructor(public http: Http) {
+  cargada = false;
+  cargada2= false;
+  equipo: any= {};
+    constructor(public http: Http) {
 
-      this.http.get('assets/data/info.pagina.json').subscribe(data => {
-        console.log(data.json());
-        this.cargada = true;
-        this.info = data.json();
-      });
+    this.carga_info();
+    this.carga_sobre_nosotros();
 
    }
+
+    public carga_info()
+   {
+
+    this.http.get('assets/data/info.pagina.json').subscribe(data => {
+
+              this.cargada = true;
+              this.info = data.json();
+            });
+   }
+
+    public carga_sobre_nosotros()
+    {
+
+      this.http.get('https://paginaweb-e539f.firebaseio.com/equipo.json').subscribe(data => {
+                      this.cargada2 = true;
+                      this.equipo = data.json();
+                      console.log(data.json());
+
+                    });
+
+    }
 
 }
