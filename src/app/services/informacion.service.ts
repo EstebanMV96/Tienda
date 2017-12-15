@@ -30,7 +30,7 @@ export class InformacionService {
       this.http.get('https://paginaweb-e539f.firebaseio.com/equipo.json').subscribe(data => {
                       this.cargada2 = true;
                       this.equipo = data.json();
-                      console.log(data.json());
+                 
 
                     });
 
