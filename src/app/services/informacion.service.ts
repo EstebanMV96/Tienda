@@ -6,7 +6,7 @@ export class InformacionService {
   info: any = {};
   cargada = false;
   cargada2= false;
-  equipo: any= {};
+  equipo: any[]= [];
     constructor(public http: Http) {
 
     this.carga_info();
