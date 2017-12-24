@@ -9,7 +9,7 @@ export class SearchComponent  {
 
   termino:string=undefined;
 
-  constructor(private route:ActivatedRoute,private  _ps:ProductosService) { 
+  constructor(private route:ActivatedRoute,public  _ps:ProductosService) { 
 
 
 
